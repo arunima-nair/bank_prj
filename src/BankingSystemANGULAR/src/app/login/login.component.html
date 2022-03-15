@@ -1,0 +1,45 @@
+<div >
+    <div class="page-header" style="background-image: url('./assets/img/bnk.jpg');">
+        <div class="container" style="margin-left:25%;"
+       >
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register">
+                      
+                        <div class="social-line text-center">
+                            <p class="h3title">LOGIN</p>
+                        </div>
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
+                            <label>Phone No.</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="fa fa-phone"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Contact No." id="contactNo"
+                                       formControlName="contactNo">
+                            </div>
+
+                            <label>Customer ID</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="PIN" id="pin"
+                                       formControlName="pin">
+                            </div>
+                            <div style="margin-left:25%;
+                            margin-right:25%;">
+                            <button  style="width:150px" class="btn btn-success btn-block" type="submit" [disabled]="!loginForm.valid">    <i class="nc-icon nc-key-25"></i> </button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

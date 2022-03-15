@@ -1,0 +1,73 @@
+<div >
+    <div class="page-header" style="background-image: url('./assets/img/bnk.jpg');">
+
+        <div>
+            <div >
+                <div class="col-lg-8 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register">
+                        <h3 class="title h3title">SIGN UP</h3>
+                      
+                        <form class="login-form" id="login-form" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+                            <div class="row">
+                                <div class="col-md-6 col-sd-12">
+                                    <label>Name</label>
+                                    <div class="input-group form-group-no-border">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="nc-icon nc-single-02"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Name" id="name" name="name"
+                                               formControlName="name">
+                                 
+                                    </div>
+                                    <label>Email</label>
+                                    <div class="input-group form-group-no-border">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="nc-icon nc-email-85"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Email" id="email"
+                                               name="email" formControlName="email" [pattern]="emailPattern">
+                                    </div>
+                               
+                                </div>
+                                <div class="col-md-6 col-sd-12">
+                                    <label>CUSTOMER ID</label>
+                                    <div class="input-group form-group-no-border">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="nc-icon nc-key-25"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" placeholder="CUSTOMER ID" id="pin"
+                                               name="pin" formControlName="pin" [pattern]="pinPattern">
+                                    </div>
+                                    <label>Contact No.</label>
+                                    <div class="input-group form-group-no-border">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-phone"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Contact No."
+                                               id="contactNo" name="contactNo" formControlName="contactNo"
+                                               [pattern]="contactNoPattern">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 ml-auto mr-auto" style="margin-left:25%;
+                            margin-right:25%;" >
+                                <button  style="width:50px" class="btn btn-success btn-block" type="submit" >    <i class="nc-icon nc-send"></i> </button>
+                             <button  style="width:50px" class="btn  btn-danger btn-block" type="reset" >    <i class="nc-icon nc-simple-remove"></i> </button>
+                         
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

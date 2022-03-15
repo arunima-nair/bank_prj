@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <div class="main">
+        <div class="container"  style="background-color: cadetblue;">
+            <div class="header-margin"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tim-title text-center">
+                        <h2>PERSONAL DETAILS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <form id="userForm" name="userForm"  style="width: 600px; height: 500px; margin-left:25%; margin-right:25%;">
+                    <div class="col-md-12 row-display form-group">
+                        <div class="col-md-2">
+                            <label class="form-check-label h3title">Name </label><span class="pull-right">:</span>
+                        </div>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="name" placeholder="Name"
+                                   [(ngModel)]="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col-md-12 row-display form-group">
+                        <div class="col-md-2">
+                            <label class="form-check-label h3title">Email </label><span class="pull-right">:</span>
+                        </div>
+                        <div class="col-md-10">
+                            <input class="form-control" type="email" id="email" placeholder="Email" [(ngModel)]="email" name="email">
+                        </div>
+                    </div>
+                    <div class="col-md-12 row-display form-group">
+                        <div class="col-md-2">
+                            <label class="form-check-label h3title">Contact No. </label><span class="pull-right">:</span>
+                        </div>
+                        <div class="col-md-10">
+                            <input class="form-control bg-light" type="text" id="contactNo" placeholder="Contact No."
+                                   disabled [value]="contactNo">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-8 ml-auto mr-auto"  style="width: 200px;  margin-left:45%; margin-right:25%;" >
+                        <button class="btn btn-block btn-danger btn-round" (click)="updateProfile()">Update Profile
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

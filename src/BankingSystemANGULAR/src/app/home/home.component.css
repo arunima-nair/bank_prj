@@ -1,0 +1,21 @@
+.header-margin{
+    margin-top: 100px;
+}
+.row-display{
+    display: flex;
+}
+.card-button{
+    min-height: 150px;
+}
+.h3title{
+    font-weight: bold;
+  align-content: center;
+}
+.h4title{
+font-weight: bold;
+ color: blue;
+}
+.welcome{
+    font-weight: bold;
+    color: rgb(6, 82, 19);
+}

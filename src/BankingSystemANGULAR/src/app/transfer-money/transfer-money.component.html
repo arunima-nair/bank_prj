@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <div class="main">
+        <div class="container" style="background-color: cadetblue;">
+            <div class="header-margin"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tim-title text-center h3title">
+                        <h2>DEPOSIT</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <form id="userForm" name="AccountForm" [formGroup]="transferMoneyForm" (ngSubmit)="transferMoneyFormSubmit()" style="width: 600px; height: 500px; margin-left:25%; margin-right:25%;">
+                    <div class="col-md-12 row-display form-group">
+                        <div class="col-md-2">
+                            <label class="form-check-label h3title">Account No. </label><span class="pull-right">:</span>
+                        </div>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="transferTo" placeholder="Account no." formControlName="transferTo" name="transferTo">
+                        </div>
+                    </div>
+                    <div class="col-md-12 row-display form-group">
+                        <div class="col-md-2">
+                            <label class="form-check-label h3title">Amount </label><span class="pull-right">:</span>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input class="form-control" type="email" id="email" placeholder="Deposit Amount in AED" formControlName="amount" name="amount">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-8 ml-auto mr-auto"  style="width: 200px;  margin-left:45%; margin-right:25%;">
+                        <button class="btn btn-round btn-danger btn-block" type="submit" [disabled]="!transferMoneyForm.valid"><i class="nc-icon nc-money-coins"></i>  Deposit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

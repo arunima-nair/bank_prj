@@ -1,0 +1,94 @@
+<div class="wrapper" >
+    <div class="main" style="background-color:teal; height: 200px;">
+      
+        <div class="container"  >
+            <div class="header-margin ">
+                
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tim-title text-center">
+                    </div>
+                </div>
+            </div>
+            <div class="welcome">
+                WELCOME {{name}}!
+            </div>
+            <div class="row"  >
+                <div class="col-md-4 ">
+                <h3 class="card-title ml-auto mr-auto mb-auto mt-auto h3title"> Balance</h3>
+
+               
+                    <a routerLink="/account">
+                        <div class="card card-button bg-light" style="width:200px;background-image: url('./assets/img/chkbal.jpg');">
+                        </div>
+                    </a>
+              
+              </div>
+      
+                <div class="col-md-4 ">
+                    <h3 class="card-title ml-auto mr-auto mt-auto mb-auto h3title">Deposit</h3>
+                    <a routerLink="/deposit">
+
+                       
+                        <div class="card card-button bg-light" style="width:200px;background-image: url('./assets/img/deposit.jpg');">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="card-title ml-auto mr-auto mt-auto mb-auto  h3title">WithDrawal History</h3>
+
+                    <a routerLink="/withdraw">
+                        <div class="card card-button bg-light" style="width:300px;background-image: url('./assets/img/withdraw.jpg');">
+                        </div>
+                    </a>
+                </div>
+            </div>
+<!--            <div class="header-margin"></div>-->
+        </div>
+                <div class="container" style="background-color:rgb(195, 248, 250); height: 400px; border-top: 0%;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tim-title text-center">
+                                <h2>Statement Summary</h2>
+                            </div>
+                        </div>
+                    </div>
+                  <h4 class="h4title"> A/C No.: {{contactNo}}</h4>
+                    <div class="row row-display">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>TNX Id</th>
+                                        <th>Date</th>
+                                        <th>Transferred To</th>
+                                        <th>Debit/Credit</th>
+                                        <th>Transferred Amount</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody *ngFor="let transaction of transactions; index as i ">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{transaction.id}}</td>
+                                        <td>{{formatDate(transaction.date)}}</td>
+                                        <td>{{transaction.transferTo}}</td>
+                                        <td>{{(transaction.transferTo===contactNo)?"CREDIT":"DEBIT"}}</td>
+                                        <td>{{transaction.amount}}</td>
+                                        <td>{{(transaction.transferTo===null)?"WITHDRAWAL":""}}</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+         
+        
+    </div>
+</div>

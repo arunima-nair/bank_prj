@@ -1,0 +1,16 @@
+.header-margin{
+    margin-top: 100px;
+}
+.row-display{
+    display: flex;
+}
+.card-button{
+    min-height: 150px;
+}
+form{
+    width: 100%;
+}
+.h3title{
+  font-weight: bold;
+  align-content: center;
+}
