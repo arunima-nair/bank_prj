@@ -3,11 +3,11 @@ import {ServiceService} from '../services/service.service';
 import {formatDate} from '@angular/common';
 
 @Component({
-    selector: 'app-transaction-history',
-    templateUrl: './transaction-history.component.html',
-    styleUrls: ['./transaction-history.component.css']
+    selector: 'app-statement-summary',
+    templateUrl: './statement-summary.component.html',
+    styleUrls: ['./statement-summary.component.css']
 })
-export class TransactionHistoryComponent implements OnInit {
+export class StatementSummaryComponent implements OnInit {
     transactions: any;
     constructor(private service: ServiceService) {
     }

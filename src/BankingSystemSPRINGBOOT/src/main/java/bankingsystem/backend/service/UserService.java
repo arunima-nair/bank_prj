@@ -36,17 +36,11 @@ public class UserService {
         }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         user.setPin(encoder.encode(user.getPin()));
-        Date now = new Date();
-        user.setAge(getAgeBetween(user.getDob(), now));
         user = userRepository.save(user);
         return accountService.createAccount(user);
     }
 
-    private int getAgeBetween(Date dob, Date now) {
-        DateTime dobjoda = new DateTime(dob);
-        DateTime nowjoda = new DateTime(now);
-        return Years.yearsBetween(dobjoda, nowjoda).getYears();
-    }
+
 
     public User getUserFromToken(String token) {
         String contactNo = jwtTokenUtil.getUsernameFromToken(token);
@@ -62,7 +56,6 @@ public class UserService {
         user.setId(existingUser.getId());
         user.setContactNo(existingUser.getContactNo());
         user.setPin(existingUser.getPin());
-        user.setAge(getAgeBetween(user.getDob(),new Date()));
         userRepository.save(user);
         return Constants.USER_UPDATED;
     }

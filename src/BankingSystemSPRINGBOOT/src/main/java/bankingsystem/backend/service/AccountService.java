@@ -1,7 +1,7 @@
 package bankingsystem.backend.service;
 
 import bankingsystem.backend.config.JwtTokenUtil;
-import bankingsystem.backend.dao.AccountRepository;
+import bankingsystem.backend.dao.ProfileRepository;
 import bankingsystem.backend.dto.Constants;
 import bankingsystem.backend.entity.Account;
 import bankingsystem.backend.entity.User;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class AccountService {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private ProfileRepository accountRepository;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

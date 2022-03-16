@@ -4,11 +4,11 @@ import {ServiceService} from '../services/service.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
-    selector: 'app-transfer-money',
-    templateUrl: './transfer-money.component.html',
-    styleUrls: ['./transfer-money.component.css']
+    selector: 'app-deposit',
+    templateUrl: './deposit.component.html',
+    styleUrls: ['./deposit.component.css']
 })
-export class TransferMoneyComponent implements OnInit {
+export class DepositComponent implements OnInit {
     transferMoneyForm: FormGroup;
 
     constructor(

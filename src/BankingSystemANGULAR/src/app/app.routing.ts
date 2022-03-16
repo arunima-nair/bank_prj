@@ -4,26 +4,26 @@ import {BrowserModule} from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
 
 import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {SignupComponent} from './signup/signup.component';
 import {HomeComponent} from './home/home.component';
-import {UserProfileComponent} from './user-profile/user-profile.component';
+import {ProfileComponent} from './profile/profile.component';
 import {AccountComponent} from './account/account.component';
-import {TransferMoneyComponent} from './transfer-money/transfer-money.component';
-import {TransactionHistoryComponent} from './transaction-history/transaction-history.component';
+import {StatementSummaryComponent} from './statement-summary/statement-summary.component';
 import {AuthGuardService} from './guard/auth-guard.service';
 import {LoginGuardService} from './guard/login-guard.service';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { DepositComponent } from './deposit/deposit.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'login', component: LoginComponent, canActivate: [LoginGuardService]},
-    {path: 'register', component: RegisterComponent, canActivate: [LoginGuardService]},
+    {path: 'register', component: SignupComponent, canActivate: [LoginGuardService]},
     {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
-    {path: 'profile', component: UserProfileComponent, canActivate: [AuthGuardService]},
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
     {path: 'account', component: AccountComponent, canActivate: [AuthGuardService]},
-    {path: 'deposit', component: TransferMoneyComponent, canActivate: [AuthGuardService]},
+    {path: 'deposit', component: DepositComponent, canActivate: [AuthGuardService]},
     {path: 'withdraw', component: WithdrawComponent, canActivate: [AuthGuardService]},
-    {path: 'history', component: TransactionHistoryComponent, canActivate: [AuthGuardService]},
+    {path: 'history', component: StatementSummaryComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({

@@ -46,7 +46,7 @@
             </div>
 <!--            <div class="header-margin"></div>-->
         </div>
-                <div class="container" style="background-color:rgb(195, 248, 250); height: 400px; border-top: 0%;">
+                <div class="container" style="background-color:rgb(195, 248, 250); height: 700px; border-top: 0%;">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="tim-title text-center">
@@ -64,9 +64,11 @@
                                         <th>#</th>
                                         <th>TNX Id</th>
                                         <th>Date</th>
-                                        <th>Transferred To</th>
+                                        <th>Transfered From A/C</th>
+                                        <th>Deposit To A/C</th>
                                         <th>Debit/Credit</th>
-                                        <th>Transferred Amount</th>
+                                        <th>Transferred/Withdrawal Amount</th>
+                                        <th>Balance Amount</th>
                                         <th></th>
                                     </tr>
                                     </thead>
@@ -75,9 +77,11 @@
                                         <td>{{i+1}}</td>
                                         <td>{{transaction.id}}</td>
                                         <td>{{formatDate(transaction.date)}}</td>
-                                        <td>{{transaction.transferTo}}</td>
+                                        <td>{{transaction.transferFrom|creditDebitMaskPipe:2}}</td>
+                                        <td>{{transaction.transferTo|creditDebitMaskPipe:2}}</td>
                                         <td>{{(transaction.transferTo===contactNo)?"CREDIT":"DEBIT"}}</td>
                                         <td>{{transaction.amount}}</td>
+                                        <td>{{(transaction.transferTo===contactNo)?transaction.balanceTo:transaction.balanceFrom}}</td>
                                         <td>{{(transaction.transferTo===null)?"WITHDRAWAL":""}}</td>
 
                                     </tr>

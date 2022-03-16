@@ -6,21 +6,23 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app.routing';
 
 import {AppComponent} from './app.component';
-import {NavbarComponent} from './shared/navbar/navbar.component';
+import {NavbarComponent} from './common/navbar/navbar.component';
 
-import {RegisterComponent} from './register/register.component';
+import {SignupComponent} from './signup/signup.component';
 import {HomeComponent} from './home/home.component';
-import {UserProfileComponent} from './user-profile/user-profile.component';
+import {ProfileComponent} from './profile/profile.component';
 import {AccountComponent} from './account/account.component';
-import {TransferMoneyComponent} from './transfer-money/transfer-money.component';
-import {TransactionHistoryComponent} from './transaction-history/transaction-history.component';
+import {DepositComponent} from './deposit/deposit.component';
+import {StatementSummaryComponent} from './statement-summary/statement-summary.component';
 import {LoginComponent} from './login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthGuardService} from './guard/auth-guard.service';
 import {LoginGuardService} from './guard/login-guard.service';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { CreditDebitMaskPipePipe } from './common/credit-debit-mask-pipe.pipe';
+import { JwtInterceptor } from './common/jwt.interceptor';
 
 
 @NgModule({
@@ -28,13 +30,14 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
         AppComponent,
         LoginComponent,
         NavbarComponent,
-        RegisterComponent,
+        SignupComponent,
         HomeComponent,
-        UserProfileComponent,
+        ProfileComponent,
         AccountComponent,
-        TransferMoneyComponent,
-        TransactionHistoryComponent,
+        DepositComponent,
+        StatementSummaryComponent,
         WithdrawComponent,
+        CreditDebitMaskPipePipe,
     ],
     imports: [
         BrowserModule,
@@ -48,7 +51,9 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
         ToastrModule.forRoot(),
     ],
     providers: [
-        AuthGuardService, LoginGuardService
+        AuthGuardService, LoginGuardService,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+
     ],
     bootstrap: [AppComponent]
 })

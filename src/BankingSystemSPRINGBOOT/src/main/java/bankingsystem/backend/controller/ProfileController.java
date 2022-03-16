@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
-public class UserController {
+public class ProfileController {
 
     @Autowired
     private UserService userService;

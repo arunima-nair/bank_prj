@@ -5,11 +5,11 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.css']
+    selector: 'app-signup',
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
     public registerForm: FormGroup;
     emailPattern: String;

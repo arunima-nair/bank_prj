@@ -44,14 +44,12 @@ export class ServiceService {
     }
 
     onFetchProfile() {
-        let header = new HttpHeaders();
-        header = header.append('token', sessionStorage.getItem('auth-token'));
+        let header =  this.getToken();
         return this.http.get(this.UserUrl, {headers: header}).pipe(catchError(error => this.handleError(error)));
     }
 
     onUpdateProfile(userDetails: {  name: string; email: string }) {
-        let headers = new HttpHeaders();
-        headers = headers.append('token', sessionStorage.getItem('auth-token'));
+        let headers = this.getToken();
         const options = {headers};
         return this.http.put(this.UserUrl, userDetails, options).pipe(tap(() => {
             this.refreshNeeded$.next();
@@ -63,28 +61,28 @@ export class ServiceService {
     }
 
     onGetAccount() {
-        let headers = new HttpHeaders();
-        headers = headers.append('token', sessionStorage.getItem('auth-token'));
+        let headers = this.getToken();
         const options = {headers};
         return this.http.get(this.accountUrl, options).pipe(catchError(error => this.handleError(error)));
     }
    withdrawMoney(transferDetails) {
-        let headers = new HttpHeaders();
-        headers = headers.append('token', sessionStorage.getItem('auth-token'));
+        let headers = this.getToken();
         const options = {headers};
         return this.http.post(this.withdrawUrl, transferDetails, options).pipe(catchError(error => this.handleError(error)));
     }
     transferMoney(transferDetails) {
-        let headers = new HttpHeaders();
-        headers = headers.append('token', sessionStorage.getItem('auth-token'));
+        let headers =  this.getToken();
         const options = {headers};
         return this.http.post(this.depositUrl, transferDetails, options).pipe(catchError(error => this.handleError(error)));
     }
 
     getTransactions() {
-        let headers = new HttpHeaders();
-        headers = headers.append('token', sessionStorage.getItem('auth-token'));
+        let headers =  this.getToken();
         const options = {headers};
         return this.http.get(this.trasactionUrl, options).pipe(catchError(error => this.handleError(error)));
+    }
+    getToken(){
+        let headers = new HttpHeaders();
+        return headers = headers.append('token', sessionStorage.getItem('auth-token'));
     }
 }

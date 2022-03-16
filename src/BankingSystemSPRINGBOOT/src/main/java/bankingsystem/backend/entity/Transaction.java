@@ -23,7 +23,9 @@ public class Transaction implements Comparable<Transaction> {
     private Long amount;
     private Date date;
     private String creditDebit;
-
+    private Long balanceFrom;
+    private Long balanceTo;
+    
     @Override
     public int compareTo(Transaction transaction) {
         return this.getDate().compareTo(transaction.getDate());

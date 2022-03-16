@@ -4,11 +4,11 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
-    selector: 'app-user-profile',
-    templateUrl: './user-profile.component.html',
-    styleUrls: ['./user-profile.component.css']
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.css']
 })
-export class UserProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
     public email: string;
     public name: string;

@@ -76,6 +76,8 @@ public class TransactionService {
         transaction.setTransferFrom(accountFrom.getAccountNo());
         transaction.setTransferTo(accountTo.getAccountNo());
         transaction.setDate(new Date());
+        transaction.setBalanceFrom(accountFrom.getBalance() - amount);
+        transaction.setBalanceTo(accountTo.getBalance() + amount);
         transactionRepository.save(transaction);
         accountFrom.setBalance(accountFrom.getBalance() - amount);
         accountService.updateAccount(accountFrom);
