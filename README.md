@@ -1,5 +1,5 @@
-# bank_prj
-Banking Pjt using angular 13 and spring boot/ MongoDB
+# bankingproject
+Banking Project using angular 13 and spring boot/ MongoDB
 ![image](https://user-images.githubusercontent.com/37262910/158532371-cea8047a-24e3-432d-a661-d7398e56ffaa.png)
 ![image](https://user-images.githubusercontent.com/37262910/158532431-20a5b2f4-b2a4-4cd2-a109-a04b249012d0.png)
 ![image](https://user-images.githubusercontent.com/37262910/158532490-175fb223-f535-46d8-b17f-ba1abf63139c.png)
